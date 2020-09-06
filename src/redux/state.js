@@ -24,18 +24,16 @@ let state = {
     }
 }
 
-export let addPostBLL = postMessage => {
+export let addPost = postMessage => {
     let newPost = {
         id: 5,
         text: postMessage,
         likesCount: 123321
     };
     state.profilePage.postData.push(newPost);
-}
-
-
-export let addPostUI = () => {
     rerenderEntireTree(state);
 }
+
+
 
 export default state

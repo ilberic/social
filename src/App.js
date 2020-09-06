@@ -10,7 +10,7 @@ import Settings from "./components/Settings/Settings";
 
 
 
-const App = ({state, addPostUI, addPostBLL}) => {
+const App = ({state, addPost}) => {
     return (
         <BrowserRouter>
             <div className="container">
@@ -18,7 +18,7 @@ const App = ({state, addPostUI, addPostBLL}) => {
                     <Header/>
                     <Nav/>
                     <Route render={ () => <Dialogs messagesData={state.dialogsPage} friendsData={state.dialogsPage}/> }  path="/dialogs"/>
-                    <Route render={ () => <Profile postData={state.profilePage} addPostUI={addPostUI} addPostBLL={addPostBLL}/>} path="/profile"/>
+                    <Route render={ () => <Profile postData={state.profilePage} addPost={addPost}/>} path="/profile"/>
                     <Route render={ () => <News/>} path="/news"/>
                     <Route render={ () => <Groups/>} path="/groups"/>
                     <Route render={ () => <Settings/>} path="/settings"/>
