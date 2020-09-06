@@ -7,7 +7,8 @@ let state = {
             {id: 2, text: "Мой первый пост!", likesCount: '12321'},
             {id: 3, text: "!!!!!", likesCount: '100123'},
             {id: 4, text: "Уаыаыв", likesCount: '101230'}
-        ]
+        ],
+        newPostText: ""
     },
     dialogsPage: {
         messagesData: [
@@ -34,6 +35,9 @@ export let addPost = postMessage => {
     rerenderEntireTree(state);
 }
 
-
+export let updateNewPostText = newText => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
 
 export default state
