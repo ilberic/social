@@ -1,11 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
 import './bootstrap-grid.min.css'
-import state from "./redux/state";
-import App from './App'
+import {rerenderEntireTree} from "./render";
+import state, {addPostBLL, addPostUI} from "./redux/state";
 
-ReactDOM.render(
-    <App state={state}/>,
-    document.getElementById('root')
-);
+
+rerenderEntireTree(state, addPostBLL, addPostUI);
+

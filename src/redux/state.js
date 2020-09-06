@@ -1,3 +1,4 @@
+import {rerenderEntireTree} from "../render";
 
 let state = {
     profilePage: {
@@ -21,7 +22,20 @@ let state = {
             {name: "Эмиль Харисов", img: "https://sun1-19.userapi.com/c857228/v857228933/1cdf9f/kfB3IP8Jcsc.jpg", id: "3"}
         ]
     }
+}
 
+export let addPostBLL = postMessage => {
+    let newPost = {
+        id: 5,
+        text: postMessage,
+        likesCount: 123321
+    };
+    state.profilePage.postData.push(newPost);
+}
+
+
+export let addPostUI = () => {
+    rerenderEntireTree(state);
 }
 
 export default state

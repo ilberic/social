@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Header from './components/Header/Header'
 import Nav from './components/Nav/Nav'
 import Profile from "./components/Profile/Profile";
@@ -10,7 +10,7 @@ import Settings from "./components/Settings/Settings";
 
 
 
-const App = ({state}) => {
+const App = ({state, addPostUI, addPostBLL}) => {
     return (
         <BrowserRouter>
             <div className="container">
@@ -18,7 +18,7 @@ const App = ({state}) => {
                     <Header/>
                     <Nav/>
                     <Route render={ () => <Dialogs messagesData={state.dialogsPage} friendsData={state.dialogsPage}/> }  path="/dialogs"/>
-                    <Route render={ () => <Profile postData={state.profilePage}/>} path="/profile"/>
+                    <Route render={ () => <Profile postData={state.profilePage} addPostUI={addPostUI} addPostBLL={addPostBLL}/>} path="/profile"/>
                     <Route render={ () => <News/>} path="/news"/>
                     <Route render={ () => <Groups/>} path="/groups"/>
                     <Route render={ () => <Settings/>} path="/settings"/>
