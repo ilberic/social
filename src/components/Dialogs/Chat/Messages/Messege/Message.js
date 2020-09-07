@@ -5,8 +5,6 @@ const Message = ({label, img, sendBy}) => {
     let messageClass = "";
     if (sendBy === "Вадим Беляев")  {
         messageClass = "my__message";
-    } else {
-        console.log(sendBy);
     }
     return (
         <div className={`message ${messageClass}`}>

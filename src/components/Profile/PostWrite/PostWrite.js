@@ -7,15 +7,13 @@ const PostWrite = ({postData, addPost, newPostText, updateNewPostText}) => {
     let newPostElement = React.createRef();
 
     let addPostFunc = () => {
-        let text = newPostElement.current.value;
-        addPost(text);
-        newPostElement.current.value = ''
-        updateNewPostText("");
+        addPost();
     }
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
         updateNewPostText(text);
+
     }
 
     return (
